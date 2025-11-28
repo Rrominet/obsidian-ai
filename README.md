@@ -78,24 +78,24 @@ For example, you can ask: *Remove the paragraph about cats in my current documen
 And it will do it.
 
 >[!note]
->Claude has for now only the context of your current document name, content and your vault filepath.
->It does not know about the other documents or your vault hierarchy.
->That being said, these features are planned.
+>Claude has for now only the context of your current document name, content and your vault filepath. 
+>It does not know about the other documents or your vault hierarchy. 
+>That being said, these features are planned. 
 
 >[!warning]
->The execution uses `python` under the hood. (see the `python` field in the settings)
->And it can virtually do anything.
+>The execution uses `python` under the hood. (see the `python` field in the settings) 
+>And it can virtually do anything. 
 >So don't come crying if you ask it to delete all your files and that is what you've got.
 >
->There is also a major security risk, so deal with it like a grown man.
+>There is also provoke major security risks, so deal with it like a grown man.
 
 #### What's the `Respond` option?
 
 It will create a file in your vault called `Claude Respond.md` which contains the answer to your prompt.
 
 >[!note]
->Once again, keep in mind that Claude has for now only the context of your current document name, content and your vault filepath.
->It does not know about the other documents or your vault hierarchy.
+>Once again, keep in mind that Claude has for now only the context of your current document name, content and your vault filepath. 
+>It does not know about the other documents or your vault hierarchy. 
 
 ### How can I change the Anthropic Model?
 
@@ -103,7 +103,7 @@ Go into the `Claudo` settings and below your api key, you can choose the model t
 
 ## Building it as a developer
 
-If you want to build the plugin to be able to modify it and make it your own, this is for you.
+If you want to build the plugin to be able to modify it and make it your own, this is for you. 
 Go into your vault plugin path: `/your/vault/path/.obsidian/plugins/`
 
 Run `git clone` to clone this repo: 
@@ -117,7 +117,8 @@ Now go into the created directory `obsidian-ai`:
 cd ./obsidian-ai
 ```
 
-Install npm if you don't have it:
+Install npm if you don't have it:  
+
 **Debian/Ubuntu/Mint:**
 ```bash
 sudo apt update
