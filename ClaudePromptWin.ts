@@ -156,8 +156,11 @@ ${contextInfo.activeFileContent}`;
 
         if (this.type.value == "exec")
         {
-            const response = await claude.send_n_exec(prompt, context, this.plugin.settings.model, contextInfo.vaultPath);
-            new Notice(response);
+            const response = await claude.send_n_exec(prompt, context, this.plugin.settings.model, contextInfo.vaultPath, this.plugin.settings.py_exec);
+            if(response == "")
+                new Notice ("Execution done.");
+            else 
+                new Notice(response);
         }
         else 
         {

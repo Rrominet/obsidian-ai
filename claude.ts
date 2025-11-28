@@ -68,7 +68,7 @@ Add <<<PYTHON_CODE>>> before and after your code.
         return response;
     }
 
-    static async exec(code: string, cwd?: string)
+    static async exec(code: string, cwd?: string, python_exec="python")
     {
         const fs = require('fs');
         const path = require('path');
@@ -81,7 +81,7 @@ Add <<<PYTHON_CODE>>> before and after your code.
         
         const { spawn } = require('child_process');
         return new Promise<string>((resolve, reject) => {
-            const python = spawn('python', ["-c", code], { cwd: cwd });
+            const python = spawn(python_exec, ["-c", code], { cwd: cwd });
             let stdout = '';
             let stderr = '';
 
@@ -109,10 +109,10 @@ Add <<<PYTHON_CODE>>> before and after your code.
         });
     }
 
-    static async send_n_exec(prompt: string, context: string, model: string, cwd: string) : Promise<string>
+    static async send_n_exec(prompt: string, context: string, model: string, cwd: string, python_exec="python") : Promise<string>
     {
         const response = await claude.send(prompt, context, model);
         const code = claude.response_to_code(response);
-        return await claude.exec(code, cwd);
+        return await claude.exec(code, cwd, python_exec);
     }
 }

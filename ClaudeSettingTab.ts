@@ -41,5 +41,17 @@ export class ClaudoSettingTab extends PluginSettingTab {
                     this.plugin.settings.model = value;
                     await this.plugin.saveSettings();
                 }));
+                //
+        // API Key setting
+        new Setting(containerEl)
+            .setName('Python')
+            .setDesc('Enter your Python executable path')
+            .addText(text => text
+                .setPlaceholder('/path/to/your/python/bin')
+                .setValue(this.plugin.settings.py_exec)
+                .onChange(async (value) => {
+                    this.plugin.settings.py_exec = value;
+                    await this.plugin.saveSettings();
+                }));
     }
 }
